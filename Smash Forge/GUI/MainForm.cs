@@ -113,6 +113,8 @@ namespace Smash_Forge
                 reloadShadersToolStripMenuItem.Enabled = false;
                 exportErrorLogToolStripMenuItem.Enabled = false;
             }
+
+            Application.Exit();
         }
 
         public void openFiles()

@@ -280,6 +280,7 @@ namespace Smash_Forge
                         }
 
                         Animation a = new Animation(ska.Name);
+                        SkeletonAnimations.Add(a);
 
                         if (i >= 0 && i < 100)
                             SkeletonAnimation.Nodes[0].Nodes.Add(a);
@@ -384,6 +385,14 @@ namespace Smash_Forge
 
                         }
                     }
+                }
+
+
+                Console.WriteLine("Saving " + SkeletonAnimations.Count + " anims");
+
+                foreach (var anim in SkeletonAnimations)
+                {
+                    anim.SaveAsExpeditedAnim();
                 }
             }
 

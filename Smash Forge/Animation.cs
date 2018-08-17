@@ -99,6 +99,22 @@ namespace Smash_Forge
             FrameCount = a.FrameCount;
         }
 
+        public void SaveAsExpeditedAnim()
+        {
+            Console.WriteLine("Expedation taking effect");
+
+            if (Runtime.TargetVBN == null)
+            {
+                MessageBox.Show("You must have a bone-set (VBN) selected to save animations.");
+                return;
+            }
+
+            if (Tag is AnimTrack)
+                ((AnimTrack)Tag).createANIM(MainForm.executableDir + "\\animextractions\\" + Text + ".anim", Runtime.TargetVBN);
+            else
+                ANIM.CreateANIM(MainForm.executableDir + "\\animextractions\\" + Text + ".anim", this, Runtime.TargetVBN);
+        }
+
         public void SaveAs(object sender, EventArgs args)
         {
             if (Runtime.TargetVBN == null)
