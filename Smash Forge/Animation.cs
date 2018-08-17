@@ -103,11 +103,8 @@ namespace Smash_Forge
         {
             Console.WriteLine("Expedation taking effect");
 
-            if (Runtime.TargetVBN == null)
-            {
-                MessageBox.Show("You must have a bone-set (VBN) selected to save animations.");
+            if (Runtime.TargetVBN == null) // Showing the message box would pause execution which is not ideal.  
                 return;
-            }
 
             if (Tag is AnimTrack)
                 ((AnimTrack)Tag).createANIM(MainForm.executableDir + "\\animextractions\\" + Text + ".anim", Runtime.TargetVBN);
